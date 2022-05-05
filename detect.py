@@ -35,7 +35,8 @@ def main():
                         help='Detections with a score under this threshold will be removed.')
 
     args = parser.parse_args()
-    prefix = re.findall(r'best_\d+\.\d+_', args.weight)[0]
+    #prefix = re.findall(r'best_\d+\.\d+_', args.weight)[0]
+    prefix = re.findall(r'latest_', args.weight)[0]
     suffix = re.findall(r'_\d+\.pth', args.weight)[0]
     args.cfg = args.weight.split(prefix)[-1].split(suffix)[0]
     cfg = get_config(args, mode='detect')
