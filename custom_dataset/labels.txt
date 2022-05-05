@@ -1,5 +1,3 @@
 background
-dog
-person
-bear
-sheep
+dot
+line
