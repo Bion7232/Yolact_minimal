@@ -193,8 +193,8 @@ class res101_custom(res101_coco):
             self.lr_steps = (0, 1200, 1600, 2000)  # just an example
 
         if self.mode in ('train', 'val'):
-            self.val_imgs = ''  # decide by yourself
-            self.val_ann = ''
+            self.val_imgs = 'custom_valset/'  # decide by yourself
+            self.val_ann = 'custom_valset/custom_ann.json'
 
 
 class res50_custom(res101_coco):
@@ -215,8 +215,8 @@ class res50_custom(res101_coco):
             self.lr_steps = (0, 1200, 1600, 2000)  # just an example
 
         if self.mode in ('train', 'val'):
-            self.val_imgs = ''  # decide by yourself
-            self.val_ann = ''
+            self.val_imgs = 'custom_valset/'  # decide by yourself
+            self.val_ann = 'custom_valset/custom_ann.json'
 
 
 def get_config(args, mode):
