@@ -134,7 +134,13 @@ class Yolact(nn.Module):
             if self.cfg.mode != 'train' and key.startswith('semantic_seg_conv'):
                 del state_dict[key]
 
-        self.load_state_dict(state_dict, strict=True)
+        #self.load_state_dict(state_dict, strict=True)
+        
+        try:
+            self.load_state_dict(state_dict)
+        except RuntimeError as e:
+            print('Ignoring "' + str(e) + '"')
+        
         print(f'Model loaded with {weight}.\n')
         print(f'Number of all parameters: {sum([p.numel() for p in self.parameters()])}\n')
 
